@@ -10,15 +10,15 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 body {
+    background: linear-gradient(to right, #656565, #565656, #383838, #000000);
     font-family: Arial, sans-serif;
     margin: 40px;
-    background-color: #000000;
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    background: white;
+    background: gray;
     padding: 20px;
     border-radius: 8px;
 }
@@ -30,7 +30,7 @@ nav a {
 }
 
 .post {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #6090e7;
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
