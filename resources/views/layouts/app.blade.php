@@ -13,6 +13,11 @@
             <a href="/posts">Blog</a>
         </nav>
         <hr>
+        @if(session('success'))
+            <div style="background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
+                {{ session('success') }}
+            </div>
+        @endif
         @yield('content')
     </div>
 </body>

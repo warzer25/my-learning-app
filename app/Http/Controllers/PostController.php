@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -34,8 +34,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|min:3|max:255',
+            'content' => 'required|min:10',
+        ]);
+
+        Post::create($validated);
+
+        return redirect()->route('posts.index')->with('success', 'Post created successfully!');
     }
+    
 
     /**
      * Display the specified resource.
