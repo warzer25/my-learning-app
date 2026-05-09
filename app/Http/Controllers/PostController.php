@@ -73,12 +73,13 @@ class PostController extends Controller
 
         return redirect()->route('posts.show', $post)->with('success', 'Post updated successfully!');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully!');
     }
 }

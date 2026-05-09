@@ -7,9 +7,13 @@
 
     @foreach($posts as $post)
         <div class="post">
+            
             <h2>{{ $post->title }}</h2>
             <p>{{ Str::limit($post->content, 150) }}</p>
-            <a href="/posts/{{ $post->id }}">Read more →</a>
+            <a href="{{ route('posts.show', $post->id) }}">Read more →</a>
         </div>
+        @auth
+        <a href="{{ route('posts.create') }}">+ Create New Post</a>
+        @endauth
     @endforeach
 @endsection
